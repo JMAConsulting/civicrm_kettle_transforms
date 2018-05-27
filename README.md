@@ -5,7 +5,7 @@ Generic transformations which are helpful for migrating data into CiviCRM using 
 
 ## Overview
 
-You provide Kettle with source data in a 'raw data' directory (eg SQL dump files in csv format is expected). Your dev server is where work is done by you manually invoking transforms. Interim transformed data is stored in a 'data' directory, you can load data into CiviCRM with its import functionality, dump data with its export, and backup and reload the database as necessary. Some transforms use CiviCRM's REST API. Optionally, you can sync your dev site to a test site. The dev server can be remote.
+You provide Kettle with source data in a 'raw data' directory (eg SQL dump files in csv format is expected, or a MS SQL server connect like at /raisers_edge/step_1.ktr#L633). Your dev server is where work is done by you manually invoking transforms. Interim transformed data is stored in a 'data' directory, you can load data into CiviCRM with its import functionality, dump data with its export, and backup and reload the database as necessary. Some transforms use CiviCRM's REST API. Optionally, you can sync your dev site to a test site. The dev server can be remote.
 
 ## Setup
 
