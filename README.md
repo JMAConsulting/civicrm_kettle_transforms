@@ -1,7 +1,11 @@
 civicrm_kettle_transforms
 =========================
 
-Generic transformations which are helpful for migrating data into CiviCRM using Pentaho Data Integration (Kettle)
+Generic transformations which are helpful for migrating data into CiviCRM using Pentaho Data Integration (Kettle).
+
+## Overview
+
+You provide Kettle with source data in a 'raw data' directory (eg SQL dump files in csv format is expected). Your dev server is where work is done by you manually invoking transforms. Interim transformed data is stored in a 'data' directory, you can load data into CiviCRM with its import functionality, dump data with its export, and backup and reload the database as necessary. Some transforms use CiviCRM's REST API. Optionally, you can sync your dev site to a test site. The dev server can be remote.
 
 ## Setup
 
@@ -22,12 +26,12 @@ Many of these transforms depend on variables being set.  In your work directory,
 * **LOCALFILES**: Path to the directory structure containing this file.
 * **DEVSERVER**: The hostname of your dev server.  Will usually be localhost.
 * **DEVCMSROOT**: The root folder of your dev site's CMS.
-* **SQLDUMP**: A path to a folder where SQL dumps of your database will be saved/loaded from.
+* **SQLDUMP**: A path to a folder where SQL dumps of your Source database will be saved/loaded from.
 * **IMPORTSCRIPT**: A path to `import.php` in your CiviCRM install.
 * **EXPORTSCRIPT**: A path to `export.php` in your CiviCRM install.
 * **DRUPALDB**: The name of your CMS database (not just Drupal).
 * **CIVIDB**: The name of your CRM database.
-* **MYSQLUSER**: The MySQL user on the dev site that can dump/load copies of the DB.
+* **MYSQLUSER**: The MySQL user on the dev site that can dump/load copies of the CiviCRM DB.
 * **MYSQLPW**: The password for MYSQLUSER.
 * **TRANSFORMREPO**: The path to the local copy of this repo.
 * **DEVSSHUSER**: The SSH user on the dev site. Even if you use your localhost as a dev server, these transforms use SSH to execute commands.
